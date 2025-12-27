@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <title>Una pregunta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+
             background:
                 linear-gradient(
                     rgba(15, 15, 15, 0.6),
@@ -13,22 +22,14 @@
                 ),
                 url("fondo.jpg") no-repeat center center fixed;
             background-size: cover;
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
         }
 
         .card {
             text-align: center;
-            background: rgba(255,255,255,0.06);
+            background: rgba(255, 255, 255, 0.08);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 0 30px rgba(127,92,255,0.4);
-            backdrop-filter: blur(6px);
+            box-shadow: 0 0 30px rgba(127, 92, 255, 0.4);
         }
 
         h1 {
@@ -63,10 +64,12 @@
         }
     </style>
 </head>
+
 <body>
 
 <div class="card">
     <h1>¿Querés intentar algo conmigo?</h1>
+
     <div class="buttons">
         <button id="si" onclick="aceptar()">Sí</button>
         <button id="no" onclick="rechazar()">No</button>
@@ -75,14 +78,15 @@
 
 <script>
     let escala = 1;
-    let textosNo = [
+    let intentos = 0;
+
+    const textosNo = [
         "¿segura?",
         "pensalo bien",
         "dale una oportunidad",
         "no es tan mala idea",
         "última chance..."
     ];
-    let intentos = 0;
 
     function rechazar() {
         escala += 0.2;
@@ -98,7 +102,7 @@
 
     function aceptar() {
         document.body.innerHTML = `
-            <div style="text-align:center; color:white; font-family:'Segoe UI', sans-serif;">
+            <div style="text-align:center;">
                 <h1 style="color:#b18cff;">Sabía que sí 💜</h1>
                 <p>Prometo cuidarte y hacer que valga la pena.</p>
             </div>
